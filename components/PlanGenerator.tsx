@@ -59,13 +59,17 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ pendingData }) => {
 
   const handleDownloadSchedule = () => {
     if (plan) {
-      generateWorkoutPDF(plan);
+      // Fallback for title if missing
+      const safePlan = { ...plan, title: plan.title || 'Workout Plan' };
+      generateWorkoutPDF(safePlan);
     }
   };
 
   const handleDownloadAnalysis = () => {
     if (plan) {
-      generateAnalysisPDF(plan);
+      // Fallback for title if missing
+      const safePlan = { ...plan, title: plan.title || 'Workout Plan' };
+      generateAnalysisPDF(safePlan);
     }
   };
 
