@@ -2,6 +2,7 @@ import { GoogleGenAI, Type, FunctionDeclaration, Tool, HarmCategory, HarmBlockTh
 import { PlannerFormData, WorkoutPlan } from "../types";
 
 // NOTE: In a real environment, never expose API keys on the client side.
+// Updated to use process.env.API_KEY as per guidelines
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
