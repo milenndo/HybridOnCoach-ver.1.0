@@ -2,8 +2,7 @@ import { GoogleGenAI, Type, FunctionDeclaration, Tool, HarmCategory, HarmBlockTh
 import { PlannerFormData, WorkoutPlan } from "../types";
 
 // NOTE: In a real environment, never expose API keys on the client side.
-// Updated to use process.env.API_KEY as per guidelines
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: (import.meta as any).env.VITE_API_KEY });
 
 const SYSTEM_INSTRUCTION = `
 You are the "HybridOne Coach". You are a world-class expert in Hybrid Training, combining the disciplines of Powerlifting, Olympic Weightlifting, CrossFit, Hyrox, and Ultra-endurance running. You possess deep academic and practical knowledge of:
